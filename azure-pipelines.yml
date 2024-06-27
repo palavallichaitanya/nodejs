@@ -19,3 +19,12 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+jobs:  
+- deployment: VMDeploy
+  displayName: Web deploy
+  environment:
+    name:  ENV
+    resourceType: VirtualMachine
+    tags: web1 # Update or remove value to match your tag
+  strategy:
